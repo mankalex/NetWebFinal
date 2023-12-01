@@ -1,3 +1,3 @@
-$(function(){
-    alert("Real Yakuzas Use a Gamepad");
-  });
+// $(function(){
+//     alert("Real Yakuzas Use a Gamepad");
+//   });
