@@ -64,6 +64,7 @@ public class CustomerController : Controller
     }
     [Authorize(Roles = "northwind-customer")]
     public IActionResult Account() => View(_dataContext.Customers.FirstOrDefault(c => c.Email == User.Identity.Name));
+
     [Authorize(Roles = "northwind-customer"), HttpPost, ValidateAntiForgeryToken]
     public IActionResult Account(Customer customer)
     {

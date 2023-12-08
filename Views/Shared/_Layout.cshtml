@@ -66,16 +66,17 @@
                             <div class="dropdown-menu" aria-labelledby="employeeDropdown">
                                 @if (User?.Identity?.IsAuthenticated ?? false)
                                 {
-                                    if (User.IsInRole("northwind-customer"))
+                                    if (User.IsInRole("employees"))
                                     {
-                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                                        <a class="dropdown-item" asp-controller="Employee" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
                                     } else {
-                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                                        <a class="dropdown-item" asp-controller="Employee" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
                                     }
                                 }
                                 else
                                 {
-                                    <a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                                    <a class="dropdown-item" asp-controller="Employee" asp-action="Discount"><i class="fas fa-sign-in-alt"></i> View Discounts</a>
+                                    <a class="dropdown-item" asp-controller="Employee" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
                                 }
                             </div>
                         </li>
