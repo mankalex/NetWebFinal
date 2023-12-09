@@ -29,6 +29,18 @@ public class DataContext : DbContext
     customerToUpdate.Fax = customer.Fax;
     SaveChanges();
   }
+  public void EditDiscount(Discount discount)
+  {
+    var discountToUpdate = Discounts.FirstOrDefault(d => d.DiscountId == discount.DiscountId);
+    discountToUpdate.Code = discount.Code;
+    discountToUpdate.StartTime = discount.StartTime;
+    discountToUpdate.EndTime = discount.EndTime;
+    discountToUpdate.ProductId = discount.ProductId;
+    discountToUpdate.DiscountPercent = discount.DiscountPercent;
+    discountToUpdate.Title = discount.Title;
+    discountToUpdate.Description = discount.Description;
+    SaveChanges();
+  }
   public CartItem AddToCart(CartItemJSON cartItemJSON)
   {
     CartItem cartItem = new CartItem()
