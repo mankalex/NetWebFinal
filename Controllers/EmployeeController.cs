@@ -7,6 +7,10 @@ public class EmployeeController : Controller
   private DataContext _dataContext;
   public EmployeeController(DataContext db) => _dataContext = db;
   public IActionResult Discount() => View(_dataContext.Discounts.OrderBy(d => d.Title));
+  public IActionResult Add(int id) {
+    ViewBag.Products = _dataContext.Products.OrderBy(p => p.ProductName);
+    return View(_dataContext.Discounts.FirstOrDefault(di => di.DiscountId == id));
+  }
   public IActionResult Edit(int id) {
     ViewBag.Products = _dataContext.Products.OrderBy(p => p.ProductName);
     return View(_dataContext.Discounts.FirstOrDefault(di => di.DiscountId == id));
@@ -33,6 +37,11 @@ public IActionResult Edit(Discount ndiscount)
         
         return View(ndiscount);
     }
+
+    
 }
 
 }
+
+
+
