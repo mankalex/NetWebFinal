@@ -41,6 +41,39 @@ public IActionResult Edit(Discount ndiscount)
     
 }
 
+[HttpPost, ValidateAntiForgeryToken] 
+public IActionResult Add(Discount ndiscount)
+{
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            _dataContext.AddDiscount(ndiscount);
+            return RedirectToAction("Discount");
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            ModelState.AddModelError("", "Concurrency error occurred.");
+            return View(ndiscount);
+        }
+    }
+    else
+    {
+        
+        return View(ndiscount);
+    }
+
+    
+}
+
+public IActionResult DeletePost(int id)
+  {
+    Discount discount = _dataContext.Discounts.FirstOrDefault(d => d.DiscountId == id);
+    int DiscountId = discount.DiscountId;
+    _dataContext.DeleteDiscount(discount);
+    return RedirectToAction("Discount");
+  }
+
 }
 
 

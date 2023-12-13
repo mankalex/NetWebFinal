@@ -46,6 +46,12 @@ public class DataContext : DbContext
     Discounts.Add(discount);
     SaveChanges();
   }
+
+  public void DeleteDiscount(Discount discount)
+  {
+    this.Remove(discount);
+    this.SaveChanges();
+  }
   public CartItem AddToCart(CartItemJSON cartItemJSON)
   {
     CartItem cartItem = new CartItem()
