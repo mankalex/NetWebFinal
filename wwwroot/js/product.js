@@ -79,4 +79,8 @@ $(function () {
     $('#toast_body').html(message);
     $('#cart_toast').toast({ delay: 2500 }).toast('show');
   }
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 });
+

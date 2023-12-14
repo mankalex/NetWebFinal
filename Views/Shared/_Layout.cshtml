@@ -69,6 +69,7 @@
                                     if (User.IsInRole("employees"))
                                     {
                                         <a class="dropdown-item" asp-controller="Employee" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                                        <a class="dropdown-item" asp-controller="Employee" asp-action="Discount"><i class="fas fa-sign-in-alt"></i> View Discounts</a>
                                     } else {
                                         <a class="dropdown-item" asp-controller="Employee" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
                                     }

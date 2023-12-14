@@ -23,8 +23,12 @@
             <label asp-for="@Model.DiscountPercent">DiscountPercent</label>
             <input asp-for="@Model.DiscountPercent" class="form-control" placeholder="DiscountPercent" />
         </div>
-        
-        @* <div class="form-group col-md-6">
+        <div class="form-group col-md-6">
+            <label asp-for="@Model.ProductId">ProductId</label>
+            <input asp-for="@Model.ProductId" class="form-control" placeholder="ProductId" />
+        </div>
+@*         
+        <div class="form-group col-md-6">
             <label>Product</label>
             <select id="ProductId" Name="ProductId">
                 @foreach(Product p in ViewBag.Products){
