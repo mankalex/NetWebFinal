@@ -9,7 +9,7 @@ public class EmployeeController : Controller
   public IActionResult Discount() => View(_dataContext.Discounts.OrderBy(d => d.Title));
   public IActionResult Add(int id) {
     ViewBag.Products = _dataContext.Products.OrderBy(p => p.ProductName);
-    return View(_dataContext.Discounts.FirstOrDefault(di => di.DiscountId == id));
+    return View();
   }
   public IActionResult Edit(int id) {
     ViewBag.Products = _dataContext.Products.OrderBy(p => p.ProductName);
@@ -66,15 +66,16 @@ public IActionResult Add(Discount ndiscount)
     
 }
 
+
 public IActionResult DeletePost(int id)
   {
     Discount discount = _dataContext.Discounts.FirstOrDefault(d => d.DiscountId == id);
     int DiscountId = discount.DiscountId;
     _dataContext.DeleteDiscount(discount);
     return RedirectToAction("Discount");
-  }
-
+  }    
 }
+
 
 
 

@@ -43,8 +43,8 @@ public class DataContext : DbContext
   }
   public void AddDiscount(Discount discount)
   {
-    Discounts.Add(discount);
-    SaveChanges();
+    this.Add(discount);
+    this.SaveChanges();
   }
 
   public void DeleteDiscount(Discount discount)
