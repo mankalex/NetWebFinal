@@ -8,7 +8,7 @@
             <span>@d.Title - <i style="opacity:.6;">@d.Description</i></span>
             <div>
                 <a asp-action="Edit" asp-route-id="@d.DiscountId"><button class="btn btn-secondary">Edit</button></a>
-               <a asp-action="Delete" asp-route-itemid="@d.DiscountId"> <button class="btn btn-danger" style="margin-left: 5px;">Delete</button> </a>
+               <a asp-action="DeleteDiscount" asp-route-id="@d.DiscountId"> <button class="btn btn-danger" style="margin-left: 5px;">Delete</button> </a>
             </div>
         </div>
     }

@@ -19,7 +19,7 @@ public class EmployeeController : Controller
     return View(_dataContext.Discounts.FirstOrDefault(di => di.DiscountId == id));
   }
 
-[Authorize(Roles = "employees")]
+// [Authorize(Roles = "employees")]
 [HttpPost, ValidateAntiForgeryToken] 
 public IActionResult Edit(Discount ndiscount)
 {
@@ -66,14 +66,14 @@ public IActionResult Add(Discount ndiscount)
         
         return View(ndiscount);
     }
-
-    
 }
+    
+
 
 [Authorize(Roles = "employees")]
-public IActionResult DeletePost(int id)
+public IActionResult DeleteDiscount(int id)
   {
-    _dataContext.DeleteDiscount(_dataContext.Discounts.FirstOrDefault(d => d.DiscountId == id));
+    _dataContext.RemoveDiscount(_dataContext.Discounts.FirstOrDefault(d => d.DiscountId == id));
     return RedirectToAction("Discount");
   }    
 }

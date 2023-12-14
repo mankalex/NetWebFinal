@@ -47,7 +47,7 @@ public class DataContext : DbContext
     this.SaveChanges();
   }
 
-  public void DeleteDiscount(Discount discount)
+  public void RemoveDiscount(Discount discount)
   {
     this.Remove(discount);
     this.SaveChanges();
